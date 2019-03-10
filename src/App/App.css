@@ -1,0 +1,28 @@
+.body {
+width:100%;
+}
+
+.header, .footer, .banner {
+  width:100%;
+  margin: 0px;
+}
+
+.main {
+  width:100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.productGallery {
+  width: 75%;
+}
+
+.aside {
+  width: 20%;
+  margin: 3%;
+}
+
+.socialButtons {
+  width: 75%;
+  padding: 0px auto;
+}
