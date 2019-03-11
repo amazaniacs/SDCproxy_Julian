@@ -1,16 +1,19 @@
+require('newrelic');
 const express = require('express');
+const path = require('path');
+const morgan = require('morgan');
 const cors = require('cors');
 const compression = require('compression');
-
-const PORT = 80;
+const proxy = require('http-proxy-middleware');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
+app.use(morgan('tiny'));
 app.use(cors());
 app.use(compression());
 
-app.get('*', (req, res) => {
-  res.sendFile(`${__dirname}/dist/index.html`);
-});
+app.use('/', proxy({ target: 'http://localhost:3004' }));
 
-app.listen(PORT);
+app.listen(PORT, console.log(`Listening on Port: ${PORT}`));
+
