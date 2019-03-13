@@ -1,5 +1,9 @@
 node_modules
-*.DS_Store
-artilleryProxy.yml
+config.js
+.DS_Store
+**.csv
+artillery.yml
+bundle.js
 newrelic.js
-newrelic_agent.log
+*.log
+*.txt
